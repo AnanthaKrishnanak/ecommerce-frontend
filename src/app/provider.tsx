@@ -1,3 +1,4 @@
+import { ConfigProvider } from "antd";
 import React from "react";
 
 interface AppProviderProps {
@@ -5,7 +6,7 @@ interface AppProviderProps {
 }
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  return <>{children}</>;
+  return <ConfigProvider>{children}</ConfigProvider>;
 };
 
 export default AppProvider;
