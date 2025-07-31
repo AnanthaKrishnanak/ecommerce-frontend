@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <Layout className="overflow-hidden">
-      <Layout.Header className="border-bottom flex align-center">
+      <Layout.Header className="flex items-center border-b border-[#e8e8e8]">
         <Header />
       </Layout.Header>
       <Layout.Content>

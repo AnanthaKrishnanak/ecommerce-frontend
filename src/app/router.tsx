@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { paths } from "@/config/path";
 import MainLayout from "@/layout";
 import Landing from "@/components/landing";
+import Products from "@/features/products/route/products";
 
 const routes = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const routes = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+      },
+      {
+        path: paths.products.path,
+        element: <Products />,
       },
     ],
   },
