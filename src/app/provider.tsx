@@ -22,7 +22,25 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
       )}
     >
       <QueryClientProvider client={queryClient}>
-        <ConfigProvider>{children}</ConfigProvider>
+        <ConfigProvider
+          layout={{
+            style: {
+              backgroundColor: "#fff",
+            },
+          }}
+          theme={{
+            token: {
+              colorBgContainer: "#fff",
+            },
+            components: {
+              Layout: {
+                colorBgHeader: "#fff",
+              },
+            },
+          }}
+        >
+          {children}
+        </ConfigProvider>
       </QueryClientProvider>
     </ErrorBoundary>
   );
