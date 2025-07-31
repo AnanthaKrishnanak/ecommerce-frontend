@@ -1,15 +1,15 @@
-import { Spin } from "antd";
 import { useProducts } from "../api/query/use-products";
 import { ProductCard } from "../components/product-card";
 import { useNavigate } from "react-router-dom";
 import { paths } from "@/config/path";
+import ProductListSkeleton from "../components/product-list-skeleton";
 
 const Products = () => {
   const { data = [], isLoading } = useProducts();
   const navigate = useNavigate();
 
   if (isLoading) {
-    return <Spin />;
+    return <ProductListSkeleton />;
   }
 
   const onProductClick = (e: React.MouseEvent<HTMLDivElement>) => {
