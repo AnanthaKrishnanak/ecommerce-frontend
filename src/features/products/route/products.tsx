@@ -10,7 +10,7 @@ const Products = () => {
   }
 
   return (
-    <div className="grid grid-cols-5 gap-4 px-20 pt-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 px-20 pt-10">
       {data.map((product) => (
         <ProductCard key={product.productId} product={product}>
           <div className="flex flex-col gap-2 items-start">
