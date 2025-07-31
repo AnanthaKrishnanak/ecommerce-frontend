@@ -1,11 +1,10 @@
-import { Divider, Flex, Typography } from "antd";
+import { Divider, Flex, Typography, Row, Col, Space } from "antd";
 import {
   GithubFilled,
   InstagramFilled,
   FacebookFilled,
   TwitterSquareFilled,
 } from "@ant-design/icons";
-import { Row, Col, Space } from "antd";
 
 import Logo from "./logo";
 import Newsletter from "./newsletter";
@@ -37,57 +36,71 @@ const footerData = [
   },
 ];
 
-const FooterNavigation = () => {
-  return (
-    <div style={{ padding: "2rem" }}>
-      <Row gutter={[16, 32]}>
-        <Col xs={24} md={6}>
-          <Space direction="vertical">
-            <Logo height={40} width={40} />
-            <Text>
-              Quality materials, good designs, professional craftsmanship and
-              sustainability.
-            </Text>
+const socialIcons = [
+  { icon: <GithubFilled />, label: "GitHub" },
+  { icon: <InstagramFilled />, label: "Instagram" },
+  { icon: <FacebookFilled />, label: "Facebook" },
+  { icon: <TwitterSquareFilled />, label: "Twitter" },
+];
+
+const FooterNavigation = () => (
+  <div className="py-8">
+    <Row gutter={[16, 32]}>
+      <Col xs={24} md={6}>
+        <Space direction="vertical">
+          <Logo height={40} width={40} />
+          <Text type="secondary" className="text-gray-500">
+            Quality materials, good designs, professional craftsmanship and
+            sustainability.
+          </Text>
+        </Space>
+      </Col>
+
+      {footerData.map((section) => (
+        <Col key={section.title} xs={24} sm={12} md={4}>
+          <Space direction="vertical" size={4}>
+            <Title level={5} className="m-0">
+              {section.title}
+            </Title>
+            <Divider className="!m-0" />
+            {section.links.map((label) => (
+              <Link
+                key={label}
+                className="text-gray-900 hover:text-black transition"
+              >
+                {label}
+              </Link>
+            ))}
           </Space>
         </Col>
+      ))}
+    </Row>
+  </div>
+);
 
-        {footerData.map((section) => (
-          <Col key={section.title} xs={24} sm={12} md={4}>
-            <Space direction="vertical" size={4}>
-              <Title level={5} style={{ margin: 0 }}>
-                {section.title}
-              </Title>
-              <Divider style={{ margin: 0 }} />
-              {section.links.map((label) => (
-                <Link key={label} style={{ color: "gray" }}>
-                  {label}
-                </Link>
-              ))}
-            </Space>
-          </Col>
+const Footer = () => (
+  <div className="p-8 pt-0">
+    <Divider />
+    <Newsletter />
+    <FooterNavigation />
+    <Divider />
+    <Flex justify="space-between" wrap="wrap" align="center">
+      <Text type="secondary" className="text-gray-500">
+        © 2023, All rights reserved
+      </Text>
+      <Flex gap="middle" align="center">
+        {socialIcons.map(({ icon, label }) => (
+          <span
+            key={label}
+            className="text-xl text-gray-400 hover:text-black cursor-pointer transition-colors"
+            aria-label={label}
+          >
+            {icon}
+          </span>
         ))}
-      </Row>
-    </div>
-  );
-};
-
-const Footer = () => {
-  return (
-    <div className="border-top" style={{ padding: "2rem" }}>
-      <Newsletter />
-      <FooterNavigation />
-      <Divider />
-      <Flex justify="space-between" gap={8} align="center">
-        <Typography.Text>© 2023, All rights reserved</Typography.Text>
-        <Flex gap={8} align="center">
-          <GithubFilled style={{ fontSize: "1.5rem", color: "gray" }} />
-          <InstagramFilled style={{ fontSize: "1.5rem", color: "gray" }} />
-          <FacebookFilled style={{ fontSize: "1.5rem", color: "gray" }} />
-          <TwitterSquareFilled style={{ fontSize: "1.5rem", color: "gray" }} />
-        </Flex>
       </Flex>
-    </div>
-  );
-};
+    </Flex>
+  </div>
+);
 
 export default Footer;

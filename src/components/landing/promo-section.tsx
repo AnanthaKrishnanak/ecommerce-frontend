@@ -19,18 +19,16 @@ const promoItems = [
 
 const PromoSection = () => {
   return (
-    <div style={{ padding: "4em 1rem", textAlign: "center" }}>
-      <Row justify="center" align="middle" gutter={[16, 24]}>
-        {promoItems.map((item, index) => (
-          <Col xs={24} md={7} key={index}>
-            <Text type="secondary">{item.label}</Text>
-            <Title level={4} style={{ margin: 10 }}>
-              {item.message}
-            </Title>
-          </Col>
-        ))}
-      </Row>
-    </div>
+    <Row justify="center" align="middle" gutter={[16, 24]} className="pt-8">
+      {promoItems.map((item, index) => (
+        <Col xs={24} md={7} key={index} className="text-center">
+          <Text type="secondary">{item.label}</Text>
+          <Title level={4} style={{ marginTop: 10 }}>
+            {item.message}
+          </Title>
+        </Col>
+      ))}
+    </Row>
   );
 };
 

@@ -2,13 +2,7 @@ import { Button, Flex, Input, Typography } from "antd";
 
 const Newsletter = () => {
   return (
-    <Flex
-      align="center"
-      justify="space-between"
-      gap={8}
-      style={{ padding: " 2rem", borderRadius: 8 }}
-      className="secondary-bg"
-    >
+    <div className="secondary-bg p-4 rounded-2xl flex items-center justify-between gap-8 flex-wrap">
       <Flex flex={1} vertical align="start" gap={8}>
         <Typography.Title level={5} style={{ margin: 0 }}>
           Sign up for our newsletter
@@ -21,7 +15,7 @@ const Newsletter = () => {
         <Input placeholder="Enter your email" />
         <Button type="primary">Subscribe</Button>
       </Flex>
-    </Flex>
+    </div>
   );
 };
 

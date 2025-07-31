@@ -10,26 +10,14 @@ const LandingSection = () => {
       <Row
         align="middle"
         justify="center"
-        style={{
-          minHeight: "600px",
-        }}
-        className="secondary-bg"
+        className="min-h-[600px] secondary-bg"
       >
-        <Col xs={24} md={12}>
-          <Flex
-            vertical
-            justify="center"
-            align="start"
-            style={{
-              padding: "64px 60px",
-              gap: 24,
-              height: "100%",
-            }}
-          >
-            <Title style={{ fontSize: "3rem", margin: 0 }}>
+        <Col xs={24} md={12} className="px-[60px] py-[64px]">
+          <Flex vertical justify="center" align="start" className="gap-6">
+            <Title className="!text-5xl !m-0">
               Explore Fresh Cosmetic Arrivals!
             </Title>
-            <Paragraph style={{ fontSize: "1.2rem", margin: 0 }}>
+            <Paragraph className="text-lg !m-0">
               Experience Beauty's Newest Delights: Discover Fresh Makeup,
               Skincare, and Beauty Products to Elevate Your Routine!
             </Paragraph>
@@ -39,23 +27,12 @@ const LandingSection = () => {
           </Flex>
         </Col>
 
-        <Col xs={24} md={12} style={{ height: "100%" }}>
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-              display: "flex",
-            }}
-          >
+        <Col xs={24} md={12}>
+          <div className="w-full h-full flex">
             <img
               src={landingImage}
               alt="Landing"
-              style={{
-                width: "100%",
-                maxHeight: "500px",
-                objectFit: "contain",
-                display: "block",
-              }}
+              className="w-full max-h-[500px] object-contain block"
             />
           </div>
         </Col>

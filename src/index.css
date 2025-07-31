@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "tailwindcss";
+
 body {
   padding: 0;
   margin: 0;
@@ -23,41 +25,6 @@ h6 {
   margin-bottom: 0 !important;
 }
 
-.border-bottom {
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.border-top {
-  border-top: 1px solid #f0f0f0;
-}
-
-.border-right {
-  border-right: 1px solid #f0f0f0;
-}
-
-.border-left {
-  border-left: 1px solid #f0f0f0;
-}
-
-.flex {
-  display: flex;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.h-full {
-  height: 100%;
-}
 .secondary-bg {
   background-color: hsla(0, 0%, 0%, 0.02);
 }
