@@ -36,6 +36,9 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
               Layout: {
                 colorBgHeader: "#fff",
               },
+              Typography: {
+                titleMarginTop: 0,
+              },
             },
           }}
         >

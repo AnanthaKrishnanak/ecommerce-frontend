@@ -4,7 +4,7 @@ export const paths = {
     getHref: () => "/",
   },
   products: {
-    path: "/products",
-    getHref: () => "/products",
+    path: "/products/",
+    getHref: () => "/products/",
   },
 };
