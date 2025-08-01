@@ -45,6 +45,7 @@ ProductCard.Image = function ImageComponent() {
       style={{ objectFit: "cover" }}
       className="rounded-md"
       loading="lazy"
+      src={product.productImageUrl ?? ""}
     />
   );
 };

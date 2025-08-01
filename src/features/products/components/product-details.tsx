@@ -42,7 +42,7 @@ const ProductDetails = () => {
       <Row gutter={[16, 16]} className="container">
         <Col xs={24} md={12}>
           <Image
-            src=""
+            src={product.productImageUrl}
             alt={product.productName}
             preview={false}
             width="100%"

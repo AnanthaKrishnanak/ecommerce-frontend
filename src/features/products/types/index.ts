@@ -8,10 +8,11 @@ export const productSchema = z.object({
   productDescription: z.string(),
   productCategory: z.string(),
   inStock: z.boolean(),
-  createdAt: z.string().datetime(),
+  createdAt: z.string(),
   brand: z.string(),
   rating: z.number().min(0).max(5),
   reviewCount: z.number(),
+  productImageUrl: z.optional(z.string()),
 });
 
 export const productListSchema = z.array(productSchema);

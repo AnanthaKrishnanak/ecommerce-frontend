@@ -7,4 +7,12 @@ export const paths = {
     path: "/products/",
     getHref: () => "/products/",
   },
+  admin: {
+    path: "/admin/",
+    getHref: () => "/admin/",
+    products: {
+      path: "products/",
+      getHref: () => "products/",
+    },
+  },
 };
