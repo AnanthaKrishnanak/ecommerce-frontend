@@ -1,12 +1,13 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { paths } from '@/config/paths';
+import { Landing } from '@/components/landing';
 
 const AppRouter = () => {
   const routes = createBrowserRouter([
     {
       path: paths.home.path,
-      element: <div>Home</div>,
+      element: <Landing />,
     },
   ]);
 

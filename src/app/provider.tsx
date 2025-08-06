@@ -6,7 +6,7 @@ import { paths } from '@/config/paths';
 
 const queryClient = new QueryClient();
 
-const AppProvider = () => {
+const AppProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <ErrorBoundary
       FallbackComponent={() => (
@@ -22,8 +22,32 @@ const AppProvider = () => {
         />
       )}
     >
-      <ConfigProvider>
-        <QueryClientProvider client={queryClient}></QueryClientProvider>
+      <ConfigProvider
+        layout={{
+          style: {
+            backgroundColor: '#fff',
+          },
+        }}
+        theme={{
+          token: {
+            colorBgContainer: '#fff',
+          },
+          components: {
+            Layout: {
+              colorBgHeader: '#fff',
+              colorBgLayout: '#fff',
+              headerPadding: 0,
+            },
+            Typography: {
+              titleMarginTop: 0,
+              titleMarginBottom: 0,
+            },
+          },
+        }}
+      >
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
       </ConfigProvider>
     </ErrorBoundary>
   );
